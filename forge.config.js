@@ -8,13 +8,24 @@ module.exports = {
         name: process.env.APP_NAME,
         appVersion: appVersion,
         buildVersion: appVersion,
-        icon: "./icons/icon"
+        icon: "./icons/icon",
+        osxSign: {
+            'gatekeeper-assess': false,
+            hardenedRuntime: true,
+            identity: 'Developer ID Application: YOUR NAME HERE (YOUR ID HERE)'
+        },
+        osxNotarize: {
+            appleId: process.env['APPLE_ID'],
+            appleIdPassword: process.env['APPLE_ID_PASSWORD']
+        }
     },
     makers: [
     {
         name: "@electron-forge/maker-squirrel",
         config: {
-        name: "test_electron_forge"
+            name: "test_electron_forge",
+            certificateFile: process.env['WINDOWS_PFX_FILE'],
+            certificatePassword: process.env['WINDOWS_PFX_PASSWORD']
         }
     },
     {
