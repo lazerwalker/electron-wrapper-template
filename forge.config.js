@@ -1,7 +1,7 @@
 const gitRef = process.env.GITHUB_REF
 const appVersion = gitRef.substring(gitRef.lastIndexOf("/") + 2)
 
-console.log(process.env)
+console.log(appVersion)
 
 module.exports = {
     packagerConfig: {
