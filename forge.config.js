@@ -1,5 +1,9 @@
 module.exports = {
-    packagerConfig: {},
+    packagerConfig: {
+        name: process.env.APP_NAME,
+        appVersion: process.env.RELEASE_VERSION,
+        icon: "./icons/icon"
+    },
     makers: [
     {
         name: "@electron-forge/maker-squirrel",

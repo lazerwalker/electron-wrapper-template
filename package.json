@@ -9,7 +9,8 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "lint": "echo \"No linting configured\"",
+    "build-icons": "electron-icon-builder --input=icon.png --flatten"
   },
   "keywords": [],
   "author": {
@@ -29,6 +30,7 @@
     "@electron-forge/maker-rpm": "6.0.0-beta.52",
     "@electron-forge/maker-squirrel": "6.0.0-beta.52",
     "@electron-forge/maker-zip": "6.0.0-beta.52",
-    "electron": "9.2.1"
+    "electron": "9.2.1",
+    "electron-icon-builder": "^1.0.2"
   }
 }
