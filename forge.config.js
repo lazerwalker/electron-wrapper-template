@@ -6,6 +6,7 @@ console.log(appVersion)
 module.exports = {
     packagerConfig: {
         name: process.env.APP_NAME,
+        executableName: process.env.APP_NAME,
         appVersion: appVersion,
         buildVersion: appVersion,
         icon: "./icons/icon",
