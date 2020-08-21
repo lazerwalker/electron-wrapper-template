@@ -41,18 +41,7 @@
           "name": "@electron-forge/maker-rpm",
           "config": {}
         }
-      ],
-      "publishers": [
-        {
-        "name": "@electron-forge/publisher-github",
-        "config": {
-          "repository": {
-            "owner": "lazerwalker",
-            "name": "twine-electron-test"
-          },
-          "prerelease": true
-        }
-      }]
+      ]
     }
   },
   "dependencies": {
