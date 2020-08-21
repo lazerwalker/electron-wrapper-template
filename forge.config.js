@@ -1,12 +1,13 @@
 const gitRef = process.env.GITHUB_REF
-const appVersion = gitRef.substring(gitRef.lastIndexOf("/") + 1)
+const appVersion = gitRef.substring(gitRef.lastIndexOf("/") + 2)
 
 console.log(process.env)
 
 module.exports = {
     packagerConfig: {
         name: process.env.APP_NAME,
-        appVersion,
+        appVersion: appVersion,
+        buildVersion: appVersion,
         icon: "./icons/icon"
     },
     makers: [
