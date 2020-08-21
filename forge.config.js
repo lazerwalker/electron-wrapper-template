@@ -1,25 +1,25 @@
 module.exports = {
-    "packagerConfig": {},
-    "makers": [
+    packagerConfig: {},
+    makers: [
     {
-        "name": "@electron-forge/maker-squirrel",
-        "config": {
-        "name": "test_electron_forge"
+        name: "@electron-forge/maker-squirrel",
+        config: {
+        name: "test_electron_forge"
         }
     },
     {
-        "name": "@electron-forge/maker-zip",
-        "platforms": [
-        "darwin"
+        name: "@electron-forge/maker-zip",
+        platforms: [
+            darwin
         ]
     },
     {
-        "name": "@electron-forge/maker-deb",
-        "config": {}
+        name: "@electron-forge/maker-deb",
+        config: {}
     },
     {
-        "name": "@electron-forge/maker-rpm",
-        "config": {}
+        name: "@electron-forge/maker-rpm",
+        config: {}
     }
     ]
 }
