@@ -1,5 +1,9 @@
 const gitRef = process.env.GITHUB_REF
-const appVersion = gitRef.substring(gitRef.lastIndexOf("/") + 2)
+
+let appVersion = gitRef
+if (gitRef.lastIndexOf("/") != -1) {
+ appVersion = gitRef.substring(gitRef.lastIndexOf("/") + 2)
+}
 
 console.log(appVersion)
 
