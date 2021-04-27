@@ -5,10 +5,16 @@ const gitRef = process.env.GITHUB_REF
 // (I wanted to use the commit SHA, but Windows version numbers must be decimal)
 let appVersion = process.env.GITHUB_RUN_NUMBER
 
-// However, if there's a git tag, use that for the version number instead
+// However, if there's a git tag of the form "v1.2.3", use that instead
 // It's assumed power users will prefer manually tagging vesrions.
 if (gitRef.lastIndexOf("/") != -1) {
- appVersion = gitRef.substring(gitRef.lastIndexOf("/") + 2)
+    // A Windows version number must only be Semver-like numbers
+    // The "+2" skips past the "v", and the regex ensures number-ness
+    // TODO: Do Windows version numbers allow suffixes like "-beta"?
+    let version = gitRef.substring(gitRef.lastIndexOf("/") + 2)
+    if (/^[0-9.]*$/.test(version) {
+        appVersion = version
+     }
 }
 
 console.log(appVersion)
