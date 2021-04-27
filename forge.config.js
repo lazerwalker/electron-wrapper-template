@@ -12,7 +12,7 @@ if (gitRef.lastIndexOf("/") != -1) {
     // The "+2" skips past the "v", and the regex ensures number-ness
     // TODO: Do Windows version numbers allow suffixes like "-beta"?
     let version = gitRef.substring(gitRef.lastIndexOf("/") + 2)
-    if (/^[0-9.]*$/.test(version) {
+    if (/^[0-9.]*$/.test(version)) {
         appVersion = version
      }
 }
