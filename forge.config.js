@@ -1,4 +1,4 @@
-const gitRef = process.env.GITHUB_REF
+const gitRef = process.env.GITHUB_REF || ''
 
 // By default, the version number is the GH Actions build number
 // This will not change if you re-run an exact build.
