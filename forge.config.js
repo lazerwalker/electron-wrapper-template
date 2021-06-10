@@ -27,9 +27,11 @@ module.exports = {
         buildVersion: appVersion,
         icon: "./icons/icon",
         osxSign: {
+            entitlements: 'entitlements.plist',      
+            'entitlements-inherit': 'entitlements.plist',      
             'gatekeeper-assess': false,
             hardenedRuntime: true,
-            identity: 'Developer ID Application: YOUR NAME HERE (YOUR ID HERE)'
+            identity: process.env['CERTIFICATE_NAME']
         },
         osxNotarize: {
             appleId: process.env['APPLE_ID'],
