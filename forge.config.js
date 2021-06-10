@@ -27,8 +27,8 @@ module.exports = {
         buildVersion: appVersion,
         icon: "./icons/icon",
         osxSign: {
-            entitlements: 'entitlements.plist',      
-            'entitlements-inherit': 'entitlements.plist',      
+            entitlements: './entitlements.plist',      
+            'entitlements-inherit': './entitlements.plist',      
             'gatekeeper-assess': false,
             hardenedRuntime: true,
             identity: process.env['CERTIFICATE_NAME']
